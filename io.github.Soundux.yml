@@ -26,4 +26,4 @@ modules:
       - type: git
         url: https://github.com/Soundux/Soundux.git
         tag: '0.2'
-        commit: '265315e92d0c1ef13b7d6152dacbc227f690b2ee'
+        commit: 'f2e9f5e36b204db4e3cab1a3e9405067df183cf2'
