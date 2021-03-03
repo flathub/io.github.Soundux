@@ -1,7 +1,7 @@
 app-id: io.github.Soundux
-runtime: org.kde.Platform
-runtime-version: '5.15'
-sdk: org.kde.Sdk
+runtime: org.gnome.Platform
+runtime-version: '3.38'
+sdk: org.gnome.Sdk
 command: soundux
 finish-args:
   - --device=dri
@@ -19,11 +19,11 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
     post-install:
-      - 'install -Dm 644 -t /app/share/metainfo flatpak/io.github.Soundux.metainfo.xml'
-      - 'install -Dm 644 -t /app/share/applications flatpak/io.github.Soundux.desktop'
-      - 'install -Dm 644 flatpak/icons/io.github.Soundux-256.png /app/share/icons/hicolor/256x256/apps/io.github.Soundux.png'
+      - 'install -Dm 644 -t /app/share/metainfo deployment/flatpak/io.github.Soundux.metainfo.xml'
+      - 'install -Dm 644 -t /app/share/applications deployment/flatpak/io.github.Soundux.desktop'
+      - 'install -Dm 644 deployment/flatpak/icons/io.github.Soundux-256.png /app/share/icons/hicolor/256x256/apps/io.github.Soundux.png'
     sources:
       - type: git
         url: https://github.com/Soundux/Soundux.git
-        tag: '0.1.6'
-        commit: 'b5030abab2bf0eb348f7a8a7d430f94121ca36bf'
+        tag: '0.2'
+        commit: 'cf2ddaa82dfe9b23fa564686106a1f2429d874fd'
