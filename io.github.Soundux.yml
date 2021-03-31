@@ -19,6 +19,7 @@ modules:
   - name: soundux
     buildsystem: cmake-ninja
     config-opts:
+      - -DUSE_FLATPAK=ON
       - -DCMAKE_BUILD_TYPE=Release
     post-install:
       - "install -Dm 644 -t /app/share/metainfo deployment/appstream/io.github.Soundux.metainfo.xml"
