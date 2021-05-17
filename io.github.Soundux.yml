@@ -30,7 +30,7 @@ modules:
       - type: git
         url: https://github.com/Soundux/Soundux.git
         tag: "0.2.3"
-        commit: "cb0c5d043ede1acee327b48eb7ca8cb301cc8fa9"
+        commit: "48858b30e34e966b81bcf8a9bece315d78a3e80b"
   - name: ffmpeg
     config-opts:
       - --enable-shared
