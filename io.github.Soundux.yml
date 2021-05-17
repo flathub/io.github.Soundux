@@ -1,6 +1,6 @@
 app-id: io.github.Soundux
 runtime: org.gnome.Platform
-runtime-version: "3.38"
+runtime-version: "40"
 sdk: org.gnome.Sdk
 command: soundux
 finish-args:
@@ -9,6 +9,7 @@ finish-args:
   - --socket=x11
   - --share=network
   - --share=ipc
+  - --filesystem=xdg-run/pipewire-0
   - --filesystem=xdg-music:ro
   - --filesystem=xdg-download:ro
   - --filesystem=xdg-documents:ro
@@ -28,8 +29,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Soundux/Soundux.git
-        tag: "0.2.2_b3"
-        commit: "c778314efef0e0c21ba3d0b62fe09230a1baa20a"
+        tag: "0.2.3"
+        commit: "cb0c5d043ede1acee327b48eb7ca8cb301cc8fa9"
   - name: ffmpeg
     config-opts:
       - --enable-shared
@@ -42,8 +43,8 @@ modules:
       - --enable-libvorbis
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-4.3.2.tar.xz
-        sha256: 46e4e64f1dd0233cbc0934b9f1c0da676008cad34725113fb7f802cfa84ccddb
+        url: https://www.ffmpeg.org/releases/ffmpeg-4.4.tar.xz
+        sha256: 06b10a183ce5371f915c6bb15b7b1fffbe046e8275099c96affc29e17645d909
     post-install:
       - install -Dm644 COPYING.LGPLv3 /app/share/licenses/ffmpeg/COPYING
     cleanup:
@@ -56,7 +57,7 @@ modules:
       - PYTHON=/usr/bin/python
     sources:
       - type: archive
-        url: https://github.com/ytdl-org/youtube-dl/releases/download/2021.04.01/youtube-dl-2021.04.01.tar.gz
-        sha256: f098ef95933a33096f60cb8c3bfbde710f6f84c9cad1b093082584bdc4a089ef
+        url: https://github.com/ytdl-org/youtube-dl/releases/download/2021.05.16/youtube-dl-2021.05.16.tar.gz
+        sha256: d4012a5ca8d77f8ee30a21532fd1042ed287c0784a5a76fcb74cc33ef76f1afd
     post-install:
       - install -Dm0755 -t /app/bin youtube-dl
