@@ -42,7 +42,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/Soundux/Soundux/releases/download/0.2.8/soundux-0.2.8.tar.gz
-        sha256: 93761c12b27f8ad2b3c419c1c9ede5108a3d5c77000c712c94dabea0aa7d048b
+        sha256: 9e06e7f082bf3898106c77db3a8df3b51329d61c25939d3538686bdce74b4f3b
         strip-components: 2
   - name: ffmpeg
     config-opts:
