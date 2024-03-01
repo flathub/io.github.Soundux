@@ -34,7 +34,7 @@ modules:
           type: gnome
           name: libwnck
           versions:
-            '=': '40.0'
+            '==': '40.0'
           stable-only: true
   - name: soundux
     buildsystem: cmake-ninja
