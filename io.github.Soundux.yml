@@ -96,5 +96,11 @@ modules:
           version-query: .tag_name
           url-query: .assets[] | select(.name|endswith(".tar.gz")) | .browser_download_url
     post-install:
-      - mv yt-dlp youtube-dl
-      - install -Dm0755 -t /app/bin youtube-dl
+      - install -Dm0755 -t /app/bin yt-dlp
+  - name: youtube-dl-compat
+    buildsystem: simple
+    build-commands:
+    - install -Dm0755 -t /app/bin youtube-dl
+    sources:
+      - type: file
+        path: youtube-dl
