@@ -1,6 +1,6 @@
 app-id: io.github.Soundux
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: soundux
 finish-args:
@@ -41,6 +41,7 @@ modules:
     config-opts:
       - -DUSE_FLATPAK=ON
       - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_CXX_FLAGS=-Wno-error=deprecated-declarations
     post-install:
       - install -Dm 644 -t /app/share/metainfo deployment/appstream/io.github.Soundux.metainfo.xml
       - install -Dm 644 -t /app/share/applications deployment/appstream/io.github.Soundux.desktop
@@ -55,6 +56,10 @@ modules:
           version-query: .tag_name
           url-query: .assets[] | select(.name|endswith(".tar.gz")) | .browser_download_url
         strip-components: 2
+      - type: patch
+        path: webkit2gtk-build-fix.patch
+      - type: patch
+        path: guardpp-build-fix.patch
   - name: ffmpeg
     config-opts:
       - --enable-shared
