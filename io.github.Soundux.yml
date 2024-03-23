@@ -1,6 +1,6 @@
 app-id: io.github.Soundux
 runtime: org.gnome.Platform
-runtime-version: "42"
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: soundux
 finish-args:
@@ -16,34 +16,50 @@ finish-args:
   - --filesystem=/run/media:ro
   - --filesystem=/media:ro
 modules:
-  - "shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json"
+  - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
   - name: libwnck
     buildsystem: meson
     config-opts:
-      - "-Dgtk_doc=false"
+      - -Dgtk_doc=false
     cleanup:
-      - "/include"
-      - "/lib/pkgconfig"
-      - "/bin"
+      - /include
+      - /lib/pkgconfig
+      - /bin
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libwnck.git
-        tag: "40.0"
-        commit: "d161ed31914711b97a1c6ebef0558d80ce51113b"
+      - type: archive
+        url: https://download.gnome.org/sources/libwnck/43/libwnck-43.0.tar.xz
+        sha256: 905bcdb85847d6b8f8861e56b30cd6dc61eae67ecef4cd994a9f925a26a2c1fe
+        x-checker-data:
+          type: gnome
+          name: libwnck
+          versions:
+            '>=': '40.0'
+          url-template: https://download.gnome.org/sources/libwnck/$major/libwnck-$version.tar.xz
+          stable-only: true
   - name: soundux
     buildsystem: cmake-ninja
     config-opts:
       - -DUSE_FLATPAK=ON
       - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_CXX_FLAGS=-Wno-error=deprecated-declarations
     post-install:
-      - "install -Dm 644 -t /app/share/metainfo deployment/appstream/io.github.Soundux.metainfo.xml"
-      - "install -Dm 644 -t /app/share/applications deployment/appstream/io.github.Soundux.desktop"
-      - "install -Dm 644 deployment/flatpak/icons/io.github.Soundux-256.png /app/share/icons/hicolor/256x256/apps/io.github.Soundux.png"
+      - install -Dm 644 -t /app/share/metainfo deployment/appstream/io.github.Soundux.metainfo.xml
+      - install -Dm 644 -t /app/share/applications deployment/appstream/io.github.Soundux.desktop
+      - install -Dm 644 deployment/flatpak/icons/io.github.Soundux-256.png /app/share/icons/hicolor/256x256/apps/io.github.Soundux.png
     sources:
       - type: archive
-        url: https://github.com/Soundux/Soundux/releases/download/0.2.8/soundux-0.2.8.tar.gz
-        sha256: d007841ae5bab71d8a25cc86d27ce137b01b29a7f2b42a5bd62b4ed50dd74043
+        url: https://github.com/Soundux/Soundux/releases/download/0.2.7/soundux-0.2.7.tar.gz
+        sha512: e813be41d324536065a1f98d397027b98a9db504faed7abb074bd0cc6ac65a7804d120cc559c5fa509acf39ff851aa74d02c4da0f3c49ad8f01286cb81776bd3
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/Soundux/Soundux/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name|endswith(".tar.gz")) | .browser_download_url
         strip-components: 2
+      - type: patch
+        path: webkit2gtk-build-fix.patch
+      - type: patch
+        path: guardpp-build-fix.patch
   - name: ffmpeg
     config-opts:
       - --enable-shared
@@ -56,21 +72,40 @@ modules:
       - --enable-libvorbis
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-5.0.1.tar.xz
-        sha256: ef2efae259ce80a240de48ec85ecb062cecca26e4352ffb3fda562c21a93007b
+        url: https://www.ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
+        sha512: fca3f8635f29182e3ae0fe843a8a53614e4b47e22c11508df3ff7cdbafbb4b5ee0d82d9b3332871f7c1032033b1cad2f67557d7c5f7f7d85e2adadca122965d5
+        x-checker-data:
+          type: anitya
+          project-id: 5405
+          versions:
+            '>=': '5.0'
+          stable-only: true
+          url-template: https://www.ffmpeg.org/releases/ffmpeg-$version.tar.xz
     post-install:
       - install -Dm644 COPYING.LGPLv3 /app/share/licenses/ffmpeg/COPYING
     cleanup:
-      - "/share/ffmpeg"
-  - name: youtube-dl
+      - /share/ffmpeg
+  - name: yt-dlp
     no-autogen: true
     no-make-install: true
     make-args:
-      - youtube-dl
+      - yt-dlp
       - PYTHON=/usr/bin/python
     sources:
       - type: archive
-        url: https://github.com/ytdl-org/youtube-dl/releases/download/2021.12.17/youtube-dl-2021.12.17.tar.gz
-        sha256: 9f3b99c8b778455165b4525f21505e86c7ff565f3ac319e19733d810194135df
+        url: https://github.com/yt-dlp/yt-dlp/releases/download/2023.12.30/yt-dlp.tar.gz
+        sha512: 23062e61cae9c51436f16de0a5ee0b351e59554ab4b5b90bed819d98b6b677bfd1797abae5baf52964eb64236c4b7abe23e37ca88ed10cbce3f7356081be59c4
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name|endswith(".tar.gz")) | .browser_download_url
     post-install:
-      - install -Dm0755 -t /app/bin youtube-dl
+      - install -Dm0755 -t /app/bin yt-dlp
+  - name: youtube-dl-compat
+    buildsystem: simple
+    build-commands:
+    - install -Dm0755 -t /app/bin youtube-dl
+    sources:
+      - type: file
+        path: youtube-dl
