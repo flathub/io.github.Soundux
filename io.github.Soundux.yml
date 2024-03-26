@@ -57,7 +57,7 @@ modules:
           url-query: .assets[] | select(.name|endswith(".tar.gz")) | .browser_download_url
         strip-components: 2
       - type: patch
-        path: webkit2gtk-build-fix.patch
+        path: webviewpp-build-fix.patch
       - type: patch
         path: guardpp-build-fix.patch
   - name: ffmpeg
