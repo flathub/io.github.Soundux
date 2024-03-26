@@ -60,6 +60,16 @@ modules:
         path: webviewpp-build-fix.patch
       - type: patch
         path: guardpp-build-fix.patch
+      - type: archive
+        dest: lib/cpp-httplib
+        archive-type: tar-gzip
+        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.15.3
+        sha512: 6d0ea2b0f69fd0de3b962d92c3d14ac71fc632740a486009e41d787f4663993c884eef50a78e41c8eed7e451f77447b097d5329c259b108a43ec7ff64be4daa6
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/yhirose/cpp-httplib/releases/latest
+          version-query: .tag_name
+          url-query: .tarball_url
   - name: ffmpeg
     config-opts:
       - --enable-shared
