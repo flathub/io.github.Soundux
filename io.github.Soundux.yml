@@ -82,8 +82,8 @@ modules:
       - --enable-libvorbis
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
-        sha512: fca3f8635f29182e3ae0fe843a8a53614e4b47e22c11508df3ff7cdbafbb4b5ee0d82d9b3332871f7c1032033b1cad2f67557d7c5f7f7d85e2adadca122965d5
+        url: https://www.ffmpeg.org/releases/ffmpeg-7.0.tar.xz
+        sha512: f693027b9c142c3757b76b2fe1c09bdafa4bf2580e691b20306bc6621080005173d068122668e80f52bd46dba3ab04a32f0608d709c8e6fd1c73387b4d4881f7
         x-checker-data:
           type: anitya
           project-id: 5405
