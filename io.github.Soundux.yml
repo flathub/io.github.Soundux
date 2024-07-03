@@ -2,7 +2,7 @@ app-id: io.github.Soundux
 runtime: org.gnome.Platform
 runtime-version: '46'
 sdk: org.gnome.Sdk
-command: soundux
+command: soundux-startup
 finish-args:
   - --device=dri
   - --socket=pulseaudio
@@ -46,6 +46,7 @@ modules:
       - install -Dm 644 -t /app/share/metainfo deployment/appstream/io.github.Soundux.metainfo.xml
       - install -Dm 644 -t /app/share/applications deployment/appstream/io.github.Soundux.desktop
       - install -Dm 644 deployment/flatpak/icons/io.github.Soundux-256.png /app/share/icons/hicolor/256x256/apps/io.github.Soundux.png
+      - install -Dm 755 -t /app/bin soundux-startup
     sources:
       - type: archive
         url: https://github.com/Soundux/Soundux/releases/download/0.2.7/soundux-0.2.7.tar.gz
@@ -60,6 +61,8 @@ modules:
         path: webviewpp-build-fix.patch
       - type: patch
         path: guardpp-build-fix.patch
+      - type: file
+        path: soundux-startup
       - type: archive
         dest: lib/cpp-httplib
         archive-type: tar-gzip
