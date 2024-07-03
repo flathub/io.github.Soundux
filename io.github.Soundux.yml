@@ -66,8 +66,8 @@ modules:
       - type: archive
         dest: lib/cpp-httplib
         archive-type: tar-gzip
-        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.15.3
-        sha512: 6d0ea2b0f69fd0de3b962d92c3d14ac71fc632740a486009e41d787f4663993c884eef50a78e41c8eed7e451f77447b097d5329c259b108a43ec7ff64be4daa6
+        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.16.0
+        sha512: 0e2bf2b70a3db5677c8e010efdeb0f27f05f09d9127143d1c35876c2d4cd09a26a57040b62495388cc4d86f06242913b18a53dbdbcc5dc1615f307c23d47600a
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yhirose/cpp-httplib/releases/latest
@@ -85,8 +85,8 @@ modules:
       - --enable-libvorbis
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-7.0.tar.xz
-        sha512: f693027b9c142c3757b76b2fe1c09bdafa4bf2580e691b20306bc6621080005173d068122668e80f52bd46dba3ab04a32f0608d709c8e6fd1c73387b4d4881f7
+        url: https://www.ffmpeg.org/releases/ffmpeg-7.0.1.tar.xz
+        sha512: 94e06c4ce64ed3888620547db0e33b29c68a9e78b3ea748346f34280f69723a6d4b7485911f45f1849f9aa3036c0699334abbcf7126d2763bdaa7276673b7daa
         x-checker-data:
           type: anitya
           project-id: 5405
@@ -106,8 +106,8 @@ modules:
       - PYTHON=/usr/bin/python
     sources:
       - type: archive
-        url: https://github.com/yt-dlp/yt-dlp/releases/download/2024.04.09/yt-dlp.tar.gz
-        sha512: 5eada1c6a3d656c4f70552824a59ed677ecc102e1a2c3475a12fccff78ea267d7391e778060d708bf0aca1bdf92f4bf413785e0cd65b43259535577e92755556
+        url: https://github.com/yt-dlp/yt-dlp/releases/download/2024.07.02/yt-dlp.tar.gz
+        sha512: 7b9c41a5dccaf9188680cac88010b7695e0809f2b3cdea398af3c507717634067e8f9d0fe02f4d51828c026bce5a31d0ae2b89a2bcc83f51ca703b627dbb995e
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest
