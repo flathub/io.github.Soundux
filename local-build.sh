@@ -27,8 +27,8 @@ check_command "flatpak-builder"
 
 # Define required Flatpak packages
 REQUIRED_FLATPAK_PACKAGES=(
-    "org.gnome.Platform//46"
-    "org.gnome.Sdk//46"
+    "org.gnome.Platform//48"
+    "org.gnome.Sdk//48"
 )
 
 # Function to check if a Flatpak package is installed
