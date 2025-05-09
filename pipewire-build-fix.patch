@@ -1,0 +1,10 @@
+--- a/src/helper/audio/linux/pipewire/pipewire.cpp	2025-05-08 21:29:28.370071131 -0400
++++ b/src/helper/audio/linux/pipewire/pipewire.cpp	2025-05-08 21:29:02.905407829 -0400
+@@ -1,6 +1,7 @@
+ #if defined(__linux__)
+ #include "pipewire.hpp"
+ #include "forward.hpp"
++#include <algorithm>
+ #include <fancy.hpp>
+ #include <memory>
+ #include <nlohmann/json.hpp>

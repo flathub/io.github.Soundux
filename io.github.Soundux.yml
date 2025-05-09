@@ -1,6 +1,6 @@
 app-id: io.github.Soundux
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: soundux-startup
 finish-args:
@@ -58,9 +58,11 @@ modules:
           url-query: .assets[] | select(.name|endswith(".tar.gz")) | .browser_download_url
         strip-components: 2
       - type: patch
-        path: webviewpp-build-fix.patch
-      - type: patch
         path: guardpp-build-fix.patch
+      - type: patch
+        path: pipewire-build-fix.patch
+      - type: patch
+        path: webviewpp-build-fix.patch
       - type: file
         path: soundux-startup
       - type: archive
