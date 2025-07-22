@@ -85,8 +85,8 @@ modules:
       - PYTHON=/usr/bin/python
     sources:
       - type: archive
-        url: https://github.com/yt-dlp/yt-dlp/releases/download/2025.06.30/yt-dlp.tar.gz
-        sha512: 30503e54c4ac4817a804b739274bb6821a667e4fbb1bd8fbbee71e900a245e5f4e649efca93f50a15d55b72b6b4a14f44a311bb70ee4806f7a72499e6825faee
+        url: https://github.com/yt-dlp/yt-dlp/releases/download/2025.07.21/yt-dlp.tar.gz
+        sha512: 244c765e1234672e5bb117e74932455fa35fc32ee783fd7c9f96e9a8548b06fcdcb5337874ffcf92714b5366f1774aa08d34e52bb276753fb6ec865407f7838b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest
