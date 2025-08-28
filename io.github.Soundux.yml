@@ -27,8 +27,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libwnck/43/libwnck-43.2.tar.xz
-        sha256: 55a7444ec1fbb95c086d40967388f231b5c0bbc8cffaa086bf9290ae449e51d5
+        url: https://download.gnome.org/sources/libwnck/43/libwnck-43.3.tar.xz
+        sha256: 6af8ac41a8f067ade1d3caaed254a83423b5f61ad3f7a460fcacbac2e192bdf7
         x-checker-data:
           type: gnome
           name: libwnck
