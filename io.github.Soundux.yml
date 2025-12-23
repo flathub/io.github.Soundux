@@ -1,6 +1,6 @@
 app-id: io.github.Soundux
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: soundux-startup
 finish-args:
@@ -41,6 +41,7 @@ modules:
     config-opts:
       - -DUSE_FLATPAK=ON
       - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       - -DCMAKE_CXX_FLAGS=-Wno-error=deprecated-declarations
     post-install:
       - install -Dm 644 -t /app/share/metainfo deployment/appstream/io.github.Soundux.metainfo.xml
@@ -60,11 +61,10 @@ modules:
           url-query: .assets[] | select(.name|endswith(".tar.gz")) | .browser_download_url
         strip-components: 2
       - type: patch
-        path: guardpp-build-fix.patch
-      - type: patch
-        path: pipewire-build-fix.patch
-      - type: patch
-        path: webviewpp-build-fix.patch
+        paths:
+          - guardpp-build-fix.patch
+          - pipewire-build-fix.patch
+          - webviewpp-build-fix.patch
       - type: file
         path: soundux-startup
       - type: archive
