@@ -70,8 +70,8 @@ modules:
       - type: archive
         dest: lib/cpp-httplib
         archive-type: tar-gzip
-        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.44.0
-        sha512: 0209587f657ba05cfa1fefb35ebf726af8fc63dd0a0822aa36956e97d41af10727c8745e3833935cd72ea17f6330b910a11e7cf4bf9a50a99e165f954a6baeaa
+        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.45.0
+        sha512: 2757d8fab4d09e61a213211ebd37ae76bbf1f21620b5ce1d5a667dbc1e2ff62064099c0dde74f7f1def52067dd9b8973f85c13c74a5b68863d910cb21a107649
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yhirose/cpp-httplib/releases/latest
