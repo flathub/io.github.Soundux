@@ -70,8 +70,8 @@ modules:
       - type: archive
         dest: lib/cpp-httplib
         archive-type: tar-gzip
-        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.62.0
-        sha512: 6c617c11530043765fe30a570e5bf6cf3533be4da0cbfb9d96d6e94c441476a46aedbfed9259917c9236cb4603e940f6cfdec3e41e0fb738a846ffba969991be
+        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.63.0
+        sha512: 75683ecf3cb9fd931c37c37b834b55e7f136b4caa25ea8bfb298ae1e397387a71370ed40fd7fa402117fd58089c31953c80c9c191e2bae49df0c5e2cfd3daea9
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yhirose/cpp-httplib/releases/latest
@@ -85,8 +85,8 @@ modules:
       - PYTHON=/usr/bin/python
     sources:
       - type: archive
-        url: https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp.tar.gz
-        sha512: a61c308d8cb34e37030a95d6bf9924d43f349674e73bc3ff16306a8a89cc4d154da18c146a1675c32bbdb35a3dd12dde337b2f8e461786b2067f69dd7d600bb0
+        url: https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.21/yt-dlp.tar.gz
+        sha512: 339f0af016fe4169a8d7133dd12809b7bb7a56cb954b77cf31c452958d104318b94a3fdc47b4c6c2d793b06b4ba41e4809a2805612ebf1b84a0e0197c8e5b4fa
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest
