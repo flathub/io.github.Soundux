@@ -53,7 +53,8 @@ modules:
     sources:
       - type: archive
         url: https://github.com/Soundux/Soundux/releases/download/0.2.7/soundux-0.2.7.tar.gz
-        sha512: e813be41d324536065a1f98d397027b98a9db504faed7abb074bd0cc6ac65a7804d120cc559c5fa509acf39ff851aa74d02c4da0f3c49ad8f01286cb81776bd3
+        sha512: 
+          e813be41d324536065a1f98d397027b98a9db504faed7abb074bd0cc6ac65a7804d120cc559c5fa509acf39ff851aa74d02c4da0f3c49ad8f01286cb81776bd3
         x-checker-data:
           type: json
           url: https://api.github.com/repos/Soundux/Soundux/releases/latest
@@ -70,8 +71,9 @@ modules:
       - type: archive
         dest: lib/cpp-httplib
         archive-type: tar-gzip
-        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.63.0
-        sha512: 75683ecf3cb9fd931c37c37b834b55e7f136b4caa25ea8bfb298ae1e397387a71370ed40fd7fa402117fd58089c31953c80c9c191e2bae49df0c5e2cfd3daea9
+        url: https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.64.0
+        sha512: 
+          aa58918c43168c36682ae08939bdc1bbddf303c82b8a29456b3ac600ebedb85b3eee5d35dba5c2d59e47868d3206d8701b55ba5867b87fed6788885932c72065
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yhirose/cpp-httplib/releases/latest
@@ -86,7 +88,8 @@ modules:
     sources:
       - type: archive
         url: https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp.tar.gz
-        sha512: 10b2d3c272396aaae9a7a56b6b084133db536be7c00efb4d1cc0dbf84d845dbcb2592a2f274929c90face898a59b2708ed6bbec195b71b989496a25f1860c339
+        sha512: 
+          10b2d3c272396aaae9a7a56b6b084133db536be7c00efb4d1cc0dbf84d845dbcb2592a2f274929c90face898a59b2708ed6bbec195b71b989496a25f1860c339
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest
